@@ -9,8 +9,13 @@ namespace UrlShortener.Data
 {
     public class UrlDbContext : DbContext
     {
-        public UrlDbContext(DbContextOptions<UrlDbContext> options) : base(options)
+        public UrlDbContext()
         {
+        }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlite("Data Source=short-urls.db");
         }
 
         public DbSet<ShortUrl> ShortUrls { get; set; }

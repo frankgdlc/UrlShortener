@@ -8,6 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using UrlShortener.Data;
 
 namespace UrlShortener
 {
@@ -24,6 +25,7 @@ namespace UrlShortener
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            services.AddDbContext<UrlDbContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
