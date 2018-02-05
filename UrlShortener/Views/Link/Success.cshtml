@@ -1,0 +1,19 @@
+﻿@model UrlShortener.Models.ShortUrl
+
+@{
+    Layout = "_Layout";
+    ViewBag.Title = "Willing Link Shortener";
+
+    var request = Context.Request;
+    string shortLink = $"{request.Scheme}://{request.Host}/v1/{Model.Hash}";
+}
+
+<h4>Success!</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <p>URL <em>@Model.OriginalUrl</em> was successfully shortened. You can now use @shortLink to access it.</p>
+
+        @Html.ActionLink("Shorten another URL", "Create")
+    </div>
+</div>

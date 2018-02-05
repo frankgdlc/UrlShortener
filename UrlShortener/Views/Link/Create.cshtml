@@ -1,0 +1,27 @@
+﻿@model UrlShortener.Models.ShortUrl
+
+@{
+    Layout = "_Layout";
+    ViewBag.Title = "Willing Link Shortener";
+}
+
+<h2></h2>
+
+<h4>URL Shortener</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        @using (Html.BeginForm())
+        {
+            @Html.ValidationSummary()
+            <div class="form-group">
+                <label for="url" class="control-label">URL</label>
+                <input id="url" name="OriginalUrl" class="form-control" placeholder="Enter URL here" />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Shorten!" class="btn btn-default" />
+            </div>
+        }
+    </div>
+</div>
+

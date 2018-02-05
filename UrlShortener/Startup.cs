@@ -37,7 +37,8 @@ namespace UrlShortener
             }
 
             // Route configuration goes here
-            app.UseMvc();
+            app.UseMvc()
+               .UseMvcWithDefaultRoute();
         }
     }
 }
